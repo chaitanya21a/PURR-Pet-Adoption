@@ -33,12 +33,12 @@ git clone https://github.com/chaitanya21a/PURR-Pet-Adoption-and-Resque
 cd PURR-Pet-Adoption-and-Resque
 ```
 
-2. **Install dependencies (for both client and server):**
+2. **Install dependencies (for both frontend and backend):**
 ```bash
-npm install && cd server && npm install && cd ..
+cd frontend && npm install && cd ../backend && npm install
 ```
 
-3. **Create a `.env` file in the `server` directory:**
+3. **Create a `.env` file in the `backend` directory:**
 ```
 # server/.env
 mongooseURL=mongodb://username:password@host:port/database_name
@@ -48,7 +48,7 @@ mongooseURL=mongodb://username:password@host:port/database_name
 
 4. **Start the server:**
 ```bash
-nodemon server/index.js # or node server/index.js
+node server.js
 ```
 
 5. **Start the frontend:**
