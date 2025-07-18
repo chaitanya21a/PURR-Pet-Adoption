@@ -5,13 +5,10 @@ const petRouter = require('./Routes/PetRoute')
 const AdoptFormRoute = require('./Routes/AdoptFormRoute')
 const AdminRoute = require('./Routes/AdminRoute')
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 
 app.use(cors());
-
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(express.json());
 
@@ -32,3 +29,5 @@ mongoose.connect(process.env.mongooseURL)
     .catch((err) => {
         console.error(err);
     })
+
+module.exports = app;

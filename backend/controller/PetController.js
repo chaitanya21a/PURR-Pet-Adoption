@@ -1,12 +1,10 @@
 const Pet = require('../Model/PetModel');
-const fs = require('fs');
-const path = require('path');
+const { cloudinary } = require('../config/cloudinary');
 
 const postPetRequest = async (req, res) => {
   try {
     const { name, age, area, justification, email, phone, type } = req.body;
-    const { filename } = req.file;
-
+    
     const pet = await Pet.create({
       name,
       age,
@@ -15,7 +13,8 @@ const postPetRequest = async (req, res) => {
       email,
       phone,
       type,
-      filename,
+      filename: req.file.path, // The URL of the image
+      cloudinary_id: req.file.filename, // The public_id from Cloudinary
       status: 'Pending'
     });
 
@@ -57,15 +56,19 @@ const allPets = async (reqStatus, req, res) => {
 const deletePost = async (req, res) => {
   try {
     const id = req.params.id;
-    const pet = await Pet.findByIdAndDelete(id);
+    // Find the pet document by ID
+    const pet = await Pet.findById(id);
+
     if (!pet) {
       return res.status(404).json({ error: 'Pet not found' });
     }
-    const filePath = path.join(__dirname, '../images', pet.filename);
 
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
+    // Delete the image from Cloudinary
+    await cloudinary.uploader.destroy(pet.cloudinary_id);
+
+    // Delete the pet document from MongoDB
+    await Pet.findByIdAndDelete(id);
+
     res.status(200).json({ message: 'Pet deleted successfully' });
   } catch (err) {
     res.status(500).json({ error: err.message });

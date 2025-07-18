@@ -34,6 +34,10 @@ const PetSchema = new schema({
         type: String,
         required: true
     },
+    cloudinary_id: {
+        type: String,
+        required: true
+    },
     status: {
         type: String,
         required: true
