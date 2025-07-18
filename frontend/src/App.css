@@ -26,7 +26,7 @@
 
 .navbar-logo {
     margin-left: 10px;
-    width: 54px;
+    width: 78px;
 }
 
 .logo-container {
@@ -352,7 +352,7 @@
 
 .navbar-logo {
     margin-left: 10px;
-    width: 54px;
+    width: 84px 20px;
 }
 
 .logo-container {
@@ -1146,7 +1146,7 @@ body {
 
 .contactUs-left-para {
     width: 55vw;
-    padding: 20px 0px;
+    padding: 120px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;

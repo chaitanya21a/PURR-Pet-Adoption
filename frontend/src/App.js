@@ -13,9 +13,9 @@ import "./App.css";
 
 const Layout = ({ children }) => (
   <>
-    <Navbar title="PawFinds" />
+    <Navbar title="PURR!" />
     {children}
-    <Footer title="PawFinds" />
+    <Footer title="PURR!" />
   </>
 );
 
