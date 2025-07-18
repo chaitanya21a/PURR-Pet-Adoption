@@ -1,4 +1,4 @@
-# PURR!: A Pet Adoption System 🐾
+# PURR!: A Pet Adoption Portal 🐾
 
 PURR! is a MERN Stack web application designed to simplify the pet adoption process. It connects pet owners looking to rehome their pets with individuals eager to adopt, all managed through a seamless, admin-monitored system.
 
