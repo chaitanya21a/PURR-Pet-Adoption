@@ -1,13 +1,7 @@
 const express = require('express');
-const auth = require('../middleware/auth');
-const { adminList, adminUpdate } = require('../Controller/AdminController');
-const { admin } = require('../middleware/roles');
 const router = express.Router();
+const { getCredentials } = require('../Controller/AdminController');
 
-// List all forms
-router.get('/requests', auth, admin, adminList);
-
-// Approve/Reject
-router.put('/requests/:id', auth, admin, adminUpdate);
+router.get('/credentials', getCredentials);
 
 module.exports = router;
