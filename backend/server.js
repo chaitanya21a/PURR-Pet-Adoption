@@ -27,7 +27,8 @@ mongoose.connect(process.env.mongooseURL)
         })
     })
     .catch((err) => {
-        console.error(err);
+        console.error("Database connection failed. Server not started.", err);
+        process.exit(1);
     })
 
 module.exports = app;
