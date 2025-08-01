@@ -21,9 +21,9 @@ app.use('/admin', AdminRoute)
 mongoose.connect(process.env.mongooseURL)
     .then(() => {
         console.log('Connected to DB');
-        const PORT = 4000;
-        app.listen(PORT, () => {
-            console.log(`Listening on port ${PORT}`)
+        // const PORT = 4000;
+        app.listen(process.env.PORT || 8000, () => {
+            console.log(`Listening on port ${process.env.PORT || 8000}`);
         })
     })
     .catch((err) => {
