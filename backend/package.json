@@ -1,6 +1,14 @@
 {
+  "name": "purr-pet-adoption-backend",
+  "version": "1.0.0",
+  "description": "Backend API for PURR Pet Adoption and Rescue platform",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "dependencies": {
     "cloudinary": "^1.41.3",
