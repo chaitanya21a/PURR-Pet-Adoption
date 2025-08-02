@@ -1,9 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const petRouter = require('./Routes/PetRoute.js')
-const AdoptFormRoute = require('./Routes/AdoptFormRoute.js')
-const AdminRoute = require('./Routes/AdminRoute.js')
+const petRouter = require('./router/PetRoute.js')
+const AdoptFormRoute = require('./router/AdoptFormRoute.js')
+const AdminRoute = require('./router/AdminRoute.js')
 const cors = require('cors');
 
 const app = express();
